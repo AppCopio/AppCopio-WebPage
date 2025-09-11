@@ -74,9 +74,8 @@ El archivo `script.js` incluye:
 ## 📞 Contacto
 
 Para más información sobre AppCopio:
-- Email: contacto@appcopio.cl
-- Teléfono: +56 2 2345 6789
-- Ubicación: Santiago, Chile
+- Email: appcopiogroup@gmail.cl
+- Ubicación: Valparaíso, Chile
 
 ---
 

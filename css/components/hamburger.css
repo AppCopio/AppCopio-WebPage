@@ -1,0 +1,6 @@
+.hamburger{ display:none; flex-direction:column; cursor:pointer; }
+.bar{ width:25px; height:3px; background:#333; margin:3px 0; transition:.3s; }
+
+@media (max-width:768px){
+  .hamburger{ display:flex; }
+}

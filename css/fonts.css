@@ -1,0 +1,66 @@
+/* ===== Inter (Variable + fallbacks) ===== */
+
+/* Variable normal (100–900). Usará nombre "Inter Variable" */
+@font-face{
+  font-family: "Inter Variable";
+  src: url("../fonts/InterV.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallbacks para navegadores sin variable fonts */
+@supports not (font-variation-settings: normal) {
+  @font-face{
+    font-family: "Inter Variable";
+    src: url("../fonts/Inter-Medium.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face{
+    font-family: "Inter Variable";
+    src: url("../fonts/Inter-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+/* Italic (no variable; si no la usas, puedes omitir) */
+@font-face{
+  font-family: "Inter Variable";
+  src: url("../fonts/Inter-Italic.woff2") format("woff2");
+  font-weight: 400;            /* ajusta si tu archivo es otro peso */
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ===== Montserrat Alternates (Regular/Bold) ===== */
+/* No tienes italic en la carpeta; el navegador puede sintetizarla si se pide. */
+@font-face{
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Stacks globales como variables CSS ===== */
+:root{
+  --font-body:  "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-title: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* pesos útiles */
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-semibold:600;
+  --w-bold:    700;
+}

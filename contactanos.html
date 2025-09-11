@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos - AppCopio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="Solicita un demo o escríbenos tus dudas sobre AppCopio.">
+
+    <!-- Fuentes: preload relativo -->
+  <link rel="preload" href="./fonts/InterV.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- CSS base + tipografía -->
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/typography.css">
+
+  <!-- Componentes que sí usa esta página -->
+  <link rel="stylesheet" href="./css/components/buttons.css">
+  <link rel="stylesheet" href="./css/components/forms.css">
+  <link rel="stylesheet" href="./css/components/nav.css">
+  <link rel="stylesheet" href="./css/components/hamburger.css">
+
+  <!-- Secciones incluidas en esta página -->
+  <link rel="stylesheet" href="./css/sections/contact.css">
+  <link rel="stylesheet" href="./css/sections/footer.css">
+
+  <!-- Iconos -->
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  
     <!-- Navbar -->
     <div data-include="/partials/navbar.html" id="navbar-slot"></div>
 
-    <!-- Sección Contáctanos -->
+<main id="contenido" class="section">
+
+     <!-- Sección Contáctanos -->
     <section id="contactanos" class="contact">
         <div class="container">
             <div class="section-header">
@@ -76,11 +105,14 @@
             </div>
         </div>
     </section>
+</main>
+
+   
 
     <!-- Footer -->
     <div data-include="/partials/footer.html" id="footer-slot"></div>
 
-    <script src="/assets/js/include.js" defer></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="assets/js/include.js" defer></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -1,16 +1,25 @@
 <!-- partials/navbar.html -->
-<nav class="navbar">
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<nav class="navbar" role="navigation" aria-label="Principal">
   <div class="nav-container">
     <div class="nav-logo">
-      <a href="index.html">
-        <img src="assets/images/appcopio.svg" alt="AppCopio Logo" class="logo-img">
+      <a href="index.html" class="nav-brand" aria-label="Ir al inicio">
+        <img src="assets/images/mini-logo.svg" alt="AppCopio" class="logo-img">
       </a>
     </div>
-    <ul class="nav-menu">
+
+    <button class="hamburger" aria-controls="primary-menu" aria-expanded="false" aria-label="Abrir menú">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
+
+    <ul id="primary-menu" class="nav-menu">
       <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+      <li class="nav-item"><a href="sobre-appcopio.html" class="nav-link">Sobre AppCopio</a></li>
       <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a></li>
       <li class="nav-item"><a href="contactanos.html" class="nav-link">Contáctanos</a></li>
     </ul>
-    <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
   </div>
 </nav>

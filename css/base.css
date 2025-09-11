@@ -1,0 +1,54 @@
+/* Reset y base */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  line-height:1.6;
+  color:#333;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* Compensa el navbar fijo (altura aprox. 55px + espaciado) */
+main { padding-top: calc(55px + var(--space-5)); }
+
+/* Accesibilidad: foco visible coherente con la marca */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link (permite saltar directo al contenido con teclado) */
+.skip-link {
+  position: absolute; left: -9999px; top: auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus {
+  left: var(--space-4); top: var(--space-4);
+  width:auto; height:auto; padding: var(--space-2) var(--space-3);
+  background: #fff; box-shadow: var(--shadow-1);
+}
+
+/* Secciones genéricas reutilizables */
+.section { padding: var(--space-4) 0; }
+.section.alt { background: #f8fafc; }
+
+/* Contenedor angosto cuando se necesite */
+.container.narrow { max-width: 900px; }
+
+/* FAQ (details/summary) – apariencia consistente */
+details {
+  background:#fff; border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1); padding: var(--space-3) var(--space-4);
+}
+details + details { margin-top: var(--space-3); }
+summary { cursor:pointer; font-weight:600; outline: none; }
+summary::-webkit-details-marker { display:none; }

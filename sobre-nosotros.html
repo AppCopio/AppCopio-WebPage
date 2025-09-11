@@ -2,31 +2,70 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sobre Nosotros - AppCopio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
+    <meta name="description" content="Conoce al equipo detrás de AppCopio y por qué nace este proyecto.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preload" href="./fonts/InterV.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Base + tipografía -->
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/tokens.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/typography.css">
+
+    <!-- Componentes -->
+    <link rel="stylesheet" href="./css/components/navbar.css">
+    <link rel="stylesheet" href="./css/components/hamburger.css">
+    <link rel="stylesheet" href="./css/components/cards.css">
+    <link rel="stylesheet" href="./css/components/nav.css">
+
+    <!-- Secciones -->
+    <link rel="stylesheet" href="./css/sections/about-us.css">
+    <link rel="stylesheet" href="./css/sections/team.css">
+    <link rel="stylesheet" href="./css/sections/footer.css">
+
+    <!-- Íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./assets/images/favicon.ico">    
   </head>
+
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <!-- Navbar -->
     <div data-include="/partials/navbar.html" id="navbar-slot"></div>
 
+    <main id="contenido" class="section">
+    
     <!-- Sección Sobre Nosotros -->
     <section id="sobre-nosotros" class="about">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Sobre Nosotros</h2>
-          <p class="section-subtitle">
-            Innovando en la gestión de recursos comunitarios
-          </p>
+          <h2 class="ds-titlePage">Sobre Nosotros</h2>
         </div>
 
         <div class="about-content">
           <div class="about-text">
-            <h3>Nuestra Misión</h3>
+            
+            <p class="lead">Somos un equipo de estudiantes de último año de Ingeniería Civil Informática en la Universidad Técnica Federico Santa María. 
+              En emergencias, coordinar recursos a tiempo salva vidas. Creemos que la tecnología debe facilitar, no complicar, la gestión en momentos críticos. 
+              En respuesta a ello, en la XXXIII Feria de Software traemos AppCopio: una plataforma que moderniza la gestión de centros de acopio 
+              y albergues con inventario automatizado, mapas interactivos y operación offline para 
+              contextos de baja conectividad.
+            <h2 class="ds-heading">Lo que nos mueve</h2>
+            <p>
+              La desconexión entre municipio y comunidad en momentos críticos retrasa la ayuda y genera inequidad. 
+              Creamos AppCopio para cerrar esa brecha con información oficial, trazable y accionable.
+            </p>
+            <h2 class="ds-heading">Nuestra visión</h2>
+            <p>
+                Ser el estándar municipal para la gestión de centros de acopio y albergues, elevando la coordinación entre autoridades, territorio y comunidad.
+            </p>
+            <h2 class="ds-heading">Nuestra misión</h2>
             <p>
               AppCopio nace de la necesidad de modernizar y optimizar la gestión
               de centros de acopio y albergues comunitarios. Nuestro objetivo es
@@ -34,35 +73,30 @@
               coordinación, el seguimiento y la administración de recursos de
               manera eficiente y transparente.
             </p>
+            <p>Ayudar a coordinar recursos y personas de forma eficiente y transparente, incluso con conectividad limitada.</p>
 
-            <h3>¿Qué Ofrecemos?</h3>
+            <h3 class="ds-heading">Valores</h3>
             <ul class="features-list">
               <li>
-                <i class="fas fa-check-circle"></i> Gestión integral de centros
-                de acopio
+                <i class="fas fa-check-circle"></i> Equidad: disminuir brechas en acceso a información y ayuda.
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Seguimiento en tiempo real
-                del estado operativo
+                <i class="fas fa-check-circle"></i> Colaboración: articular municipio, comunidad y organizaciones.
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Sistema de inventario
-                automatizado
+                <i class="fas fa-check-circle"></i> Resiliencia: operar online y offline, con tolerancia a fallos.
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Mapas interactivos de
-                ubicaciones
+                <i class="fas fa-check-circle"></i> Transparencia: datos oficiales y trazabilidad para decisiones claras.
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Panel de administración
-                intuitivo
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Funcionalidad offline para
-                áreas remotas
+                <i class="fas fa-check-circle"></i> Usabilidad en terreno: pensado para encargados y equipos en contexto real.
               </li>
             </ul>
           </div>
+
+
+          
 
           <div class="about-cards">
             <div class="card">
@@ -86,20 +120,42 @@
                 operaciones diarias.
               </p>
             </div>
-
-            <!-- <div class="card">
-                        <div class="card-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Reportes y Analytics</h4>
-                        <p>Información detallada para la toma de decisiones basada en datos.</p>
-                    </div> -->
           </div>
         </div>
+
         <section id="equipo" class="team-section">
           <div class="container">
             <h2 class="section-title">Conoce a nuestro equipo</h2>
             <div class="card-container">
+
+              <!-- Miembro 3 -->
+              <div class="team-member">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img
+                        src="assets/images/pali.jpg"
+                        alt="Paula Castillo"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="flip-card-back">
+                      <div class="back-content">
+                        <div class="info">
+                          <div class="name">Paula Castillo</div>
+                          <div class="position-linkedin">
+                            <a href="https://www.linkedin.com/" target="_blank">
+                              <i class="fab fa-linkedin"></i>
+                            </a>
+                            <div class="position">Scrum Master</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
               <!-- Miembro 1 -->
               <div class="team-member">
                 <div class="flip-card">
@@ -122,7 +178,7 @@
                             >
                               <i class="fab fa-linkedin"></i>
                             </a>
-                            <div class="position">Testing</div>
+                            <div class="position">Testing y calidad</div>
                           </div>
                         </div>
                       </div>
@@ -162,33 +218,7 @@
                 </div>
               </div>
 
-              <!-- Miembro 3 -->
-              <div class="team-member">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img
-                        src="assets/images/pali.jpg"
-                        alt="Paula Castillo"
-                        class="img-fluid"
-                      />
-                    </div>
-                    <div class="flip-card-back">
-                      <div class="back-content">
-                        <div class="info">
-                          <div class="name">Paula Castillo</div>
-                          <div class="position-linkedin">
-                            <a href="https://www.linkedin.com/" target="_blank">
-                              <i class="fab fa-linkedin"></i>
-                            </a>
-                            <div class="position">Scrum Master</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
 
               <!-- Miembro 4 -->
               <div class="team-member">
@@ -209,7 +239,7 @@
                             <a href="https://www.linkedin.com/" target="_blank">
                               <i class="fab fa-linkedin"></i>
                             </a>
-                            <div class="position">Ux design</div>
+                            <div class="position">UX design</div>
                           </div>
                         </div>
                       </div>
@@ -237,7 +267,7 @@
                             <a href="https://www.linkedin.com/" target="_blank">
                               <i class="fab fa-linkedin"></i>
                             </a>
-                            <div class="position">Scrum Master</div>
+                            <div class="position">Tech Lead</div>
                           </div>
                         </div>
                       </div>
@@ -265,7 +295,7 @@
                             <a href="https://www.linkedin.com/" target="_blank">
                               <i class="fab fa-linkedin"></i>
                             </a>
-                            <div class="position">Scrum Master</div>
+                            <div class="position">Marketing y comunicaciones</div>
                           </div>
                         </div>
                       </div>
@@ -293,10 +323,13 @@
       </div>
     </section>
 
+</main>
+    
+
     <!-- Footer -->
     <div data-include="/partials/footer.html" id="footer-slot"></div>
 
-    <script src="/assets/js/include.js" defer></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="assets/js/include.js" defer></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

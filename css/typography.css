@@ -1,0 +1,41 @@
+/* Fuente por defecto y colores base */
+body{
+  font-family:var(--font-body);
+  font-weight:var(--w-regular);
+  line-height:1.5;
+  color:#111827; /* gris-900 */
+}
+
+/* Títulos con Montserrat */
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-title);
+  font-weight:var(--w-bold);
+  line-height:1.2;
+  margin:0 0 .5rem;
+}
+
+/* Tamaños fluidos mínimos para títulos */
+h1 { font-size: clamp(2rem, 3vw + 1rem, 3rem);   line-height: 1.2; }
+h2 { font-size: clamp(1.5rem, 2.2vw + .5rem, 2.25rem); line-height: 1.25; }
+
+/* Tamaño base fluido para párrafos y listas */
+p, li { font-size: clamp(1rem, .35vw + .95rem, 1.125rem); }
+
+
+/* Utilidades de tipografía */
+.ds-titleHero  { font-family:var(--font-title); font-weight:700; font-size:clamp(2.25rem, 2vw + 1.5rem, 3rem); line-height:1.2; margin:0; }
+.ds-titlePage  { font-family:var(--font-title); font-weight:700; font-size:2.5rem; line-height:1.2; margin:0; }
+.ds-subtitle   { font-family:var(--font-title); font-weight:600; font-size:2rem;   line-height:1.2; margin:0; }
+.ds-heading    { font-family:var(--font-title); font-weight:600; font-size:1.75rem; line-height:1.25; margin:0; }
+.ds-subheading { font-family:var(--font-title); font-weight:600; font-size:1.55rem;line-height:1.25; margin:0; }
+
+.ds-bodyBase   { font-family:var(--font-body);  font-weight:400; font-size:1rem; line-height:1.5; margin:0; margin-bottom:20px; }
+.ds-bodyStrong { font-family:var(--font-body);  font-weight:600; font-size:1rem; line-height:1.35; margin:0; margin-bottom:20px; }
+.ds-bodyLink   { font-family:var(--font-body);  font-weight:600; font-size:1rem; text-decoration:underline; text-underline-offset:.2em; }
+
+code.ds-bodyCode{
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono","Courier New", monospace;
+  font-size:.9375rem; background:rgba(0,0,0,.05); padding:2px 6px; border-radius:4px;
+}
+
+

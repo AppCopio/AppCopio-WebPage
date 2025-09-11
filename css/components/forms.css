@@ -1,0 +1,17 @@
+.form-group{ margin-bottom:20px; }
+.form-group label{
+  display:block; margin-bottom:8px; color:#333; font-weight:500;
+  font-size: clamp(1rem, .35vw + .95rem, 1.125rem);
+}
+.form-group input,
+.form-group textarea{
+  width:100%; padding:12px 15px; border:2px solid #e9ecef; border-radius:8px;
+  font-size:1rem; transition:border-color .3s ease;
+  font-size: clamp(1rem, .35vw + .95rem, 1.125rem);
+}
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none; border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(43,130,201,.15);
+}
+.form-group textarea{ resize:vertical; min-height:120px; }

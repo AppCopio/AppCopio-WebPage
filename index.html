@@ -1,43 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>AppCopio - Sistema de Gestión de Centros de Acopio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
+    <meta name="description" content="AppCopio ayuda a coordinar centros de acopio y albergues en emergencias, incluso sin internet. Ideal para municipios, ONGs, universidades y voluntarios.">
+
+    <!-- OG básico -->
+    <meta property="og:title" content="AppCopio — Coordina centros de acopio y albergues">
+    <meta property="og:description" content="Funciona sin internet. Organiza donaciones, familias e inventario en minutos.">
+    <meta property="og:image" content="assets/images/og-appcopio.png">
+
+    <!-- Fuentes -->
+    <link rel="preload" href="./fonts/InterV.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- CSS existente -->
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/tokens.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/typography.css">
+
+    <link rel="stylesheet" href="./css/components/buttons.css">
+    <link rel="stylesheet" href="./css/components/hamburger.css">
+    <link rel="stylesheet" href="./css/components/cards.css">
+    <link rel="stylesheet" href="./css/components/forms.css">
+    <link rel="stylesheet" href="./css/components/nav.css"><!-- (solo si usas .nav-menu) -->
+
+    <link rel="stylesheet" href="./css/sections/hero.css">
+    <link rel="stylesheet" href="./css/sections/about-appcopio.css">
+    <link rel="stylesheet" href="./css/sections/contact.css">
+    <link rel="stylesheet" href="./css/sections/footer.css">
+    <link rel="stylesheet" href="./css/sections/team.css">
+
+    <link rel="stylesheet" href="./css/animations.css">
+  </head>
 <body>
-    <!-- Navbar -->
-    <div data-include="/partials/navbar.html" id="navbar-slot"></div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Navbar -->
+  <div data-include="partials/navbar.html" id="navbar-slot"></div>
+
+  <main id="contenido">
+
 
     <!-- Sección Inicio -->
-    <section id="inicio" class="hero">
+      <section id="inicio" class="hero">
         <div class="hero-container">
-            <div class="hero-content">
+          <div class="hero-content">
                 <div class="hero-logo">
                     <img src="assets/images/appcopio.svg" alt="AppCopio" class="hero-logo-img">
                 </div>
-                <h2 class="hero-subtitle">Sistema de Gestión de Centros de Acopio</h2>
-                <p class="hero-description">
-                    Plataforma integral para la gestión eficiente de centros de acopio y albergues comunitarios, 
-                    facilitando la coordinación de recursos y la atención a la comunidad.
+                <h2 class="ds-subtitle">Sistema de Gestión de Centros de Acopio</h2>
+                <p class="ds-bodyBase">
+                  Centraliza la gestión de centros de acopio y albergues, visibiliza necesidades en tiempo real y coordina mejor la ayuda... incluso con conexión inestable.  
+                  Plataforma integral para la gestión eficiente de centros de acopio y albergues comunitarios, 
+                  facilitando la coordinación de recursos y la atención a la comunidad.
+                  Organiza donaciones, registra familias y gestiona inventario en minutos. Diseñado para municipios, equipos y voluntarios en emergencias reales.
                 </p>
                 <div class="hero-buttons">
-                    <a href="sobre-nosotros.html" class="btn btn-primary">Conocer Más</a>
-                    <a href="contactanos.html" class="btn btn-secondary">Contáctanos</a>
+                  <a href="sobre-nosotros.html" class="btn btn-primary">Conocer Más</a>
+                  <a href="contactanos.html" class="btn btn-secondary">Contáctanos</a>
+                  <a class="btn btn-secondary" href="#como-funciona">Ver cómo funciona</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/mapin.jpeg" alt="Mapin" class="hero-img">
+                <img src="assets/images/Mapin1.png" alt="Mapin" class="hero-img">
             </div>
+          </div>
         </div>
+      </section>
+
+
+    <!-- BENEFICIOS -->
+    <div data-include="partials/beneficios.html" id="beneficios"></div>
+
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como-funciona" class="section alt">
+      <div class="container">
+        <p></p>
+        <h2 class="ds-heading">¿Cómo funciona?</h2>
+        <div class="steps-grid">
+          <article class="step">
+            <span class="step-num">1</span>
+            <h3 class="step-title">Activa tus centros</h3>
+            <p>Configura centros de acopio y albergues y define responsables.</p>
+          </article>
+          <article class="step">
+            <span class="step-num">2</span>
+            <h3 class="step-title">Registra personas e inventario</h3>
+            <p>Inscribe familias, registra necesidades y controla el stock.</p>
+          </article>
+          <article class="step">
+            <span class="step-num">3</span>
+            <h3 class="step-title">Sincroniza cuando vuelvas online</h3>
+            <p>La información se mantiene y se sincroniza de forma segura.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <div data-include="/partials/footer.html" id="footer-slot"></div>
 
-    <script src="/assets/js/include.js" defer></script>
-    <script src="/assets/js/script.js"></script>
+
+    <!-- PARA QUIÉN -->
+    <section class="section">
+      <div class="container">
+        <h2 class="ds-heading">Pensado para</h2>
+        <ul class="chips">
+          <li class="chip">Municipalidades (DIDECO)</li>
+          <li class="chip">ONGs</li>
+          <li class="chip">Universidades</li>
+          <li class="chip">Juntas de vecinos</li>
+          <li class="chip">Voluntarios</li>
+        </ul>
+      </div>
+    </section>
+
+
+    
+
+  <!-- Footer -->
+  <div data-include="/partials/footer.html" id="footer-slot"></div>
+
+  <script src="assets/js/include.js" defer></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
