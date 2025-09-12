@@ -1,0 +1,7 @@
+.hero-appcopio { padding: clamp(1rem, 2.5vw, 2rem) .5rem; text-align:center; }
+.eyebrow { font-weight:700; letter-spacing:.06em; text-transform:uppercase; opacity:.75; }
+.hero-title { font-size: clamp(2rem, 6vw, 3rem); font-weight: 900; letter-spacing:-.02em; transition: opacity .2s ease; }
+.hero-title.fade-out { opacity: .2; }
+.hero-subtitle { margin:.5rem auto 1.25rem; max-width: 50ch; opacity:.85; }
+.hero-cta { display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+

@@ -1,57 +1,181 @@
-.about{ padding:80px 0; background:#f8f9fa; }
+/* ===== Sobre AppCopio (header 2 columnas) ===== */
+.about{ padding: 0px 0; background:#f8f9fa; }
 
-.section-header{ text-align:center; margin-bottom:60px; }
-.section-title{
-  font-family: var(--font-title);
-  font-weight: var(--w-semibold);
-  font-size: 1.75rem;
-  line-height: 1.25;
-  margin-bottom: 15px;
-}
-.section-subtitle{
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.5;
+.section-header{ text-align:center; }
+.section .ds-heading,
+.section .ds-subtitle {
+  text-align: center;
 }
 
-.about-content{
-  display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;
+/* Grid del header: móvil 1 col, desktop 2 col (logo | texto) */
+.about > header.container{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-areas:
+    "logo"
+    "title"
+    "lead";
+  gap: var(--space-3, 1rem);
+  padding-block: var(--space-6, 2rem);
+  text-align:center;
+  max-width: var(--container-max);   /* asegura 1200 */
+  margin-inline: auto;
+}
+.about .section-header { grid-area: logo; }
+.about .ds-titlePage   { grid-area: title; margin: 0; }
+.about .lead           { grid-area: lead;  margin: .2rem 0 0; max-width: 80ch; }
+
+.about .hero-logo{ display:flex; justify-content:center; }
+.about .hero-logo-img{ max-width:200px; width:100%; height:auto; object-fit:contain; }
+
+/* Desktop */
+@media (min-width: 900px){
+  .about > header.container{
+    grid-template-columns: auto minmax(0,1fr);
+    grid-template-areas:
+      "logo title"
+      "logo lead";
+    column-gap: var(--space-6, 2rem);
+    align-items:center;
+    text-align:left;
+  }
+  .about .section-header{ align-self:center; }
+  .about .hero-logo{ justify-content:flex-start; align-items:center; }
+  .about .hero-logo-img{ display:block; max-width: 300px; padding-left: 5rem;} /* evita baseline shift */
 }
 
-.about-text p{
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+
+
+/* ===== Features ODS (filas intercaladas) ===== */
+.features{
+  display:grid;
+  grid-auto-rows:auto;
+  gap: var(--space-3, 5px);
+}
+.feature-row{
+  display:flex;
+  align-items:center;
+}
+.feature-row:nth-child(even){ flex-direction: row-reverse; }
+
+.feature-row > .feature-media,
+.feature-row > .feature-content{
+  flex: 1 1 50%;
+  min-width:0;
 }
 
-.features-list{ list-style:none; margin-top:20px; }
-.features-list li{ padding:8px 0; display:flex; align-items:center; gap:10px; }
-.features-list i{ color:#28a781; font-size:1.1rem; }
-
-.about-cards{ display:grid; gap:30px; }
-
-/* Chips ("¿Para quién es?") */
-.chips {
-  list-style:none; display:flex; gap: var(--space-2);
-  flex-wrap:wrap; padding:0; margin:0;
-}
-.chip {
-  background:#eef6fd; color:#0f3d64;
-  border-radius:999px; padding:.5rem .75rem;
-  font-weight:600; font-size:.9rem;
+/* Imagen */
+.feature-media{ display:flex; justify-content:center; }
+.feature-img{
+  width:100%;
+  max-width:150px;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: var(--shadow-1, 0 6px 18px rgba(0,0,0,.08));
+  background:#f6f7f9;
 }
 
-/* “¿Cómo funciona?” (pasos) */
+/* Texto */
+.feature-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  text-align:left;
+  max-width:60ch;
+}
+.feature-row:nth-child(even) .feature-content{
+  align-items:flex-end;
+  text-align:right;
+}
+/* Nuevo: usa variable --accent si está presente */
+.feature-title{
+  margin:0 0 6px 0;
+  font-weight:600;
+  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  color: var(--accent, inherit);
+}
+
+/* === ODS en una sola fila: texto — imagen — imagen — texto === */
+.features.features--inline{
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto auto minmax(0,1fr);
+  grid-template-areas: "text-left img1 img2 text-right";
+  align-items: center;
+  gap: var(--space-5, 1.25rem) var(--space-6, 2rem);
+}
+
+/* Aplana los contenedores de fila para usar sus hijos como ítems del grid */
+.features.features--inline .feature-row{ 
+  display: contents !important;
+}
+
+/* Coloca cada pieza en su área */
+.features.features--inline .feature-row:nth-child(1) .feature-content{ 
+  grid-area: text-left; 
+  align-items: flex-end; 
+  text-align: right; 
+}
+.features.features--inline .feature-row:nth-child(1) .feature-media{ 
+  grid-area: img1; 
+}
+
+.features.features--inline .feature-row:nth-child(2) .feature-media{ 
+  grid-area: img2; 
+}
+.features.features--inline .feature-row:nth-child(2) .feature-content{ 
+  grid-area: text-right; 
+  align-items: flex-start; 
+  text-align: left; 
+}
+
+/* Detalles visuales coherentes con tu estilo actual */
+.features.features--inline .feature-media{ justify-content: center; }
+.features.features--inline .feature-img{ max-width: 150px; }
+.features.features--inline .feature-title{ margin: 0; }
+
+/* Mobile: apilado legible */
+@media (max-width: 900px){
+  .features.features--inline{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img1"
+      "text-left"
+      "img2"
+      "text-right";
+    gap: var(--space-5, 1.25rem);
+  }
+  .features.features--inline .feature-row .feature-content{
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+
+/* Responsive features */
+@media (max-width: 768px){
+  .feature-row{
+    flex-direction:column;
+    gap: var(--space-6, 24px);
+    text-align:center;
+  }
+  .feature-row:nth-child(even){ flex-direction:column; }
+  .feature-content{ align-items:center; text-align:center; max-width:38rem; }
+  .feature-img{ max-width:125px; }
+}
+
+/* ===== Cómo funciona (steps) ===== */
 .steps-grid{
-  display:grid; gap: var(--space-4);
-  grid-template-columns: repeat(4, 1fr);
+  display:grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, 1fr); /* antes: 4, ahora 3 (tienes 3 pasos) */
 }
 .step{
-  background:#fff; border-radius: var(--radius-md);
-  box-shadow: var(--shadow-1); padding: var(--space-4);
+  background:#fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--space-4);
 }
 .step-num{
   display:inline-grid; place-items:center;
@@ -62,111 +186,92 @@
 @media (max-width: 900px){ .steps-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px){ .steps-grid { grid-template-columns: 1fr; } }
 
-
-
-/* Responsive */
-@media (max-width:768px){
-  .about-content{ grid-template-columns:1fr; gap:30px; }
-  .section-title{ font-size:2rem; }
+/* ===== Chips “Pensado para” ===== */
+.chips{
+  list-style:none; display:flex; gap: var(--space-2);
+  flex-wrap:wrap; padding:0; margin:0;
 }
+.chip{
+  background:#eef6fd; color:#0f3d64;
+  border-radius:999px; padding:.5rem .75rem;
+  font-weight:600; font-size:.9rem;
+}
+
+/* ===== Responsive menores (heredado/limpio) ===== */
 @media (max-width:480px){
   .about{ padding:60px 0; }
 }
 
-
-
-
-
-/*ODS*/
-
-/* === Bloque de filas intercaladas (imagen | texto) === */
-.features{
-  display: grid;
-  grid-auto-rows: auto;
-  gap: var(--space-3, 5px);
+/* ===== Problem card ===== */
+.problem-card{     
+  max-width: 1200px;
+  margin-inline: auto;
+  background: #f6fbfa;
+  border: 2px dashed #00888333;
+  border-radius: var(--radius-2xl, 22px);
+  padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
 }
 
-/* Cada fila: dos columnas centradas verticalmente */
-.feature-row{
-  display: flex;
-  align-items: center;                  /* centra verticalmente imagen y texto */
+/* Card para "Nuestra solución" (consistente con .problem-card pero sólida) */
+.solution-card{
+  max-width: 1200px;
+  margin-inline: auto;
+  background: #ffffff;
+  border: 1px solid #e6f2ef;
+  border-radius: var(--radius-2xl, 22px);
+  padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+  box-shadow: var(--shadow-1, 0 12px 32px rgba(0,0,0,.06));
 }
 
-/* Intercalar: filas pares invierten el orden (texto | imagen) */
-.feature-row:nth-child(even){
-  flex-direction: row-reverse;
+/* Franja de colaboración */
+.partners-strip{
+  background: #f4fbfa;
+  border: 1px solid #e6f2ef;
+  border-radius: var(--radius-xl, 18px);
+  padding: .85rem 1rem;
+  text-align: center;
 }
-
-/* Columnas con ancho simétrico */
-.feature-row > .feature-media,
-.feature-row > .feature-content{
-  flex: 1 1 50%;
-  min-width: 0;                         /* evita overflow del texto */
-}
-
-/* --- Imagen --- */
-.feature-media{
-  display: flex;
-  justify-content: center;              /* centra la imagen en su columna */
-}
-.feature-img{
-  width: 100%;
-  max-width: 200px;                     /* opcional: limita el ancho de la imagen */
-  aspect-ratio: 1;                 /* cambia a 4/3 o 1 si prefieres */
-  object-fit: cover;
-  border-radius: var(--radius-lg, 12px);
-  box-shadow: var(--shadow-1, 0 6px 18px rgba(0,0,0,.08));
-  background: #f6f7f9;                  /* placeholder mientras carga */
-}
-
-/* --- Texto “apuntando” hacia la imagen (al centro de la fila) --- */
-.feature-content{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;              /* centra verticalmente el bloque de texto */
-  align-items: flex-start;              /* filas impares: texto al borde interno (izquierda) */
-  text-align: left;
-  max-width: 60ch;                      /* opcional: mejora la legibilidad */
-}
-
-/* Filas pares (row-reverse): el texto mira hacia la imagen (derecha) */
-.feature-row:nth-child(even) .feature-content{
-  align-items: flex-end;
-  text-align: right;
-}
-
-/* Tipografía */
-.feature-title{
-  margin: 0 0 6px 0;
-  font-weight: 600;
-  font-size: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
-}
-.feature-desc{
+.partners-text{
   margin: 0;
-  line-height: 1.6;
-  color: var(--color-muted, #586473);
+  font-weight: 600;
 }
 
-/* --- Responsive: en móvil se apilan y se centran --- */
-@media (max-width: 768px){
-  .feature-row{
-    flex-direction: column;
-    gap: var(--space-6, 24px);
-    text-align: center;
-  }
-  .feature-row:nth-child(even){
-    flex-direction: column;             /* cancela el reverse en mobile */
-  }
-  .feature-row > .feature-media,
-  .feature-row > .feature-content{
-    flex-basis: auto;
-  }
-  .feature-content{
-    align-items: center;
-    text-align: center;                 /* lectura más natural en pantallas pequeñas */
-    max-width: 38rem;                   /* opcional: límite cómodo en mobile */
-  }
-  .feature-img{
-    max-width: 720px;                   /* permite imágenes un poco más grandes en mobile */
-  }
+/* Grid 2 columnas ajustado al container (1200px) */
+.ps-grid{
+  display: grid;
+  gap: var(--space-4, 1.25rem);
+  grid-template-columns: 1fr;
 }
+@media (min-width: 960px){
+  .ps-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Tarjetas pareadas */
+.ps-card{
+  border-radius: var(--radius-2xl, 22px);
+  padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+  background: #fff;
+  box-shadow: var(--shadow-1, 0 12px 32px rgba(0,0,0,.06));
+  border: 1px solid #e6f2ef;
+  display: flex; flex-direction: column; gap: .5rem;
+}
+.ps-card.is-problem{
+  background: #f6fbfa;
+  border: 2px dashed #00888333;
+  box-shadow: none;
+}
+.ps-head .ps-kicker{
+  display:inline-block; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  font-size:.8rem; opacity:.7; margin-bottom:.25rem;
+}
+.ps-list{ margin:.25rem 0 0 1.1rem; }
+.ps-list li{ margin:.25rem 0; }
+
+/* Micro-logos de partners */
+.partners-inline{
+  margin-top: .75rem;
+  display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+  background:#f4fbfa; border:1px solid #e6f2ef; border-radius:12px; padding:.5rem .75rem;
+}
+.partners-inline img{ height:50px; width:auto; display:block;}
+.partners-inline span{ font-weight:600; margin-right:.25rem; }

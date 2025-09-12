@@ -1,6 +1,6 @@
 .hero{
   background: linear-gradient(335deg, #1e4b7a 0%, var(--color-primary) 100%);
-  color:#fff; padding:95px 0 80px; min-height:80vh;
+  color:#fff; padding:60px 0 30px; min-height:50vh;
   display:flex; align-items:center;
 }
 .hero-container{

@@ -1,0 +1,19 @@
+
+.impact-strip {
+  margin: 2rem auto; padding: 1.25rem;
+  background: linear-gradient(90deg, #008883, #00a3a3);
+  color:#fff;
+  text-align:center;
+}
+.impact-item { display:flex; gap:.75rem; justify-content:center; align-items:baseline; flex-wrap:wrap; }
+.impact-number { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 900; }
+.impact-text { font-size: clamp(1rem, 2vw, 1.2rem); opacity:.95; }
+.impact-footnote { margin: .35rem 0 0; font-size:.85rem; opacity:.8; }
+
+.pull-quote {
+  max-width: 900px; margin: 2rem auto; padding: 1.25rem 1.5rem;
+  background: #f4fbfa; border: 2px dashed #00888344;
+  border-radius: var(--radius-lg, 16px); text-align:center;
+}
+.pull-quote blockquote { font-size: clamp(1.1rem, 2.4vw, 1.5rem); font-weight: 800; margin:0; }
+.pull-quote figcaption { margin-top:.5rem; opacity:.85; }

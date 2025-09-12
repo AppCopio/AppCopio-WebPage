@@ -271,7 +271,6 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(img => imageObserver.observe(img));
 });
 
-
 document.addEventListener("navbar:loaded", () => {
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.querySelector('.nav-menu');
@@ -290,3 +289,22 @@ document.addEventListener("navbar:loaded", () => {
     });
   });
 });
+
+
+(function(){
+  const el = document.getElementById('hero-title');
+  if (!el) return;
+  const slogans = [
+    "Orden en el caos.",
+    "Información crítica a tiempo.",
+    "Coordina ayuda. Incluso sin internet.",
+    "Centros activos, personas protegidas."
+  ];
+  let i = 0;
+  function tick(){
+    i = (i + 1) % slogans.length;
+    el.classList.add('fade-out');
+    setTimeout(() => { el.textContent = slogans[i]; el.classList.remove('fade-out'); }, 200);
+  }
+  setInterval(tick, 3800);
+})();

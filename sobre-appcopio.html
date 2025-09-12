@@ -6,121 +6,208 @@
   <title>Sobre AppCopio — Qué es y cómo ayuda</title>
   <meta name="description" content="Descubre qué es AppCopio, el problema que resuelve y cómo ayuda a coordinar centros de acopio y albergues con operación offline, trazabilidad y priorización.">
 
+  <!-- Fuentes -->
   <link rel="preload" href="./fonts/InterV.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
 
+  <!-- CSS base -->
   <link rel="stylesheet" href="./css/fonts.css">
   <link rel="stylesheet" href="./css/tokens.css">
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/typography.css">
+
+  <!-- Sección / componentes -->
   <link rel="stylesheet" href="./css/sections/about-appcopio.css">
-  <link rel="stylesheet" href="./css/sections/footer.css">
   <link rel="stylesheet" href="./css/components/nav.css">
   <link rel="stylesheet" href="./css/components/hamburger.css">
   <link rel="stylesheet" href="./css/components/cards.css">
+  <link rel="stylesheet" href="./css/components/rotador.css">
+  <link rel="stylesheet" href="./css/sections/footer.css">
 </head>
+
 <body>
-
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <div data-include="partials/navbar.html"></div>
+  <div data-include="partials/navbar.html" id="navbar-slot"></div>
 
-  <main id="contenido" class="section">
-    <header class="container">
-      <h1 class="ds-titlePage">Sobre AppCopio</h1>
+  <!-- main sin .container para evitar doble padding; cada sección ya define .container -->
+  <main id="contenido">
+
+    <!-- SOBRE APPCOPIO (header 2 columnas: logo | texto) -->
+    <section id="sobre-appcopio" class="about" aria-labelledby="sobre-title">
+      <header class="container">
+        <div class="section-header">
+          <div class="hero-logo">
+            <img src="assets/images/Cromático vertical - logo.svg" alt="AppCopio" class="hero-logo-img">
+          </div>
+        </div>
+
+        <h2 class="ds-titlePage" id="sobre-title">Sobre AppCopio</h2>
+
+        <p class="lead">
+          AppCopio es la plataforma municipal para coordinar centros de acopio y albergues en emergencias y catástrofes.
+          Unifica información, prioriza necesidades y permite operar en terreno aún sin conexión.
+        </p>
+      </header>
+    </section>
+
+    <!-- PROBLEMA / SOLUCIÓN (split profesional) -->
+<section class="section">
+  <div class="container ps-grid">
+    <!-- Problema -->
+    <article class="ps-card is-problem">
+      <header class="ps-head">
+        <span class="ps-kicker">Contexto</span>
+        <h2 class="ds-subtitle">El problema</h2>
+      </header>
       <p class="lead">
-        AppCopio es la plataforma municipal para coordinar centros de acopio y albergues en emergencia.
-        Unifica información, prioriza necesidades y permite operar en terreno aún sin conexión.
+        En momentos críticos, los equipos municipales suelen depender de planillas, formularios y chats
+        que fragmentan la información. Esto ralentiza decisiones, duplica esfuerzos y puede generar una
+        entrega de ayuda desigual entre territorios.
       </p>
-    </header>
+      <ul class="ps-list">
+        <li>Datos dispersos y sin trazabilidad.</li>
+        <li>Decisiones lentas por falta de visibilidad.</li>
+        <li>Dependencia de conectividad en terreno.</li>
+      </ul>
+    </article>
 
+    <!-- Nuestra solución -->
+    <article class="ps-card is-solution">
+      <header class="ps-head">
+        <span class="ps-kicker">Propuesta</span>
+        <h2 class="ds-subtitle">Nuestra solución</h2>
+      </header>
+      <p class="lead">
+        AppCopio junta en un solo lugar lo que hoy está repartido en planillas y chats.
+        Puedes registrar lo que pasa en el centro aun sin señal; cuando vuelve la conexión,
+        todo se sincroniza solo. Así, todos miran la misma información actualizada.
+      </p>
+      <ul class="ps-list">
+        <li>Registra entradas y salidas de insumos, familias y turnos en pocos pasos.</li>
+        <li>La información queda ordenada por centro y fecha para encontrarla rápido.</li>
+        <li>Transparencia: se ve <em>qué</em> se hizo, <em>cuándo</em> y <em>quién</em> lo realizó.</li>
+      </ul>
+
+      <!-- (Opcional) micro-logos de colaboración -->
+      <div class="partners-inline" aria-label="Colaboración">
+        <span>En colaboración con Sección de Emergencia I.M.V.</span>
+        <img src="assets/images/dideco.png" alt="Sección de Emergencia DIDECO, Ilustre Municipalidad de Valparaíso" />
+      </div>
+    </article>
+  </div>
+</section>
+
+    <!-- BENEFICIOS -->
     <section class="section">
       <div class="container">
-        <h2 class="ds-subtitle">¿Qué es AppCopio?</h2>
-        <p>
-          Es una solución web/móvil que centraliza la operación de centros de acopio y albergues:
-          visibilidad en mapa, inventario por centro, registro de personas y familias, y un canal oficial
-          para comunicar necesidades prioritarias a la comunidad y organizaciones.
-        </p>
+        <h2 class="ds-heading">¿Qué ofrecemos?</h2>
+        <div data-include="partials/beneficios.html" id="beneficios"></div>
       </div>
     </section>
 
-    <section class="section alt">
-      <div class="container">
-        <h2 class="ds-subtitle">El problema</h2>
-        <p class="lead">
-          En momentos críticos, los equipos municipales suelen depender de planillas, formularios y chats
-          que fragmentan la información. Esto ralentiza decisiones, duplica esfuerzos y puede generar una
-          entrega de ayuda desigual entre territorios.
-        </p>
-      </div>
-    </section>
-
-    <div data-include="partials/beneficios.html" id="beneficios"></div>
-
+    <!-- ODS -->
     <section class="section">
       <div class="container">
         <h2 class="ds-heading">Apoyo y relación con los ODS</h2>
         <p>
           AppCopio contribuye a una respuesta más justa y coordinada, alineada con los Objetivos de Desarrollo Sostenible:
         </p>
-        <div class="features">
-              <!-- Fila 1 -->
-              <div class="feature-row">
-                <div class="feature-media">
-                  <img class="feature-img" src="assets/images/ODS10.png" alt="Centro de acopio operando con voluntariado organizado" loading="lazy">
-                </div>
-                <div class="feature-content">
-                  <h3 class="feature-title"> Acceso igualitario a información crítica cuando más se necesita.</h3>
-                </div>
-              </div>
 
-              <!-- Fila 2 (intercalada: texto | imagen) -->
-              <div class="feature-row">
-                <div class="feature-media">
-                  <img class="feature-img" src="assets/images/ODS17.jpg" alt="Mapa municipal con centros geolocalizados y estados por color" loading="lazy">
-                </div>
-                <div class="feature-content">
-                  <h3 class="feature-title"> Articulación efectiva entre municipio, comunidad y organizaciones para resiliencia local en condiciones adversas.</h3>
-                </div>
-              </div>
+        <div class="features features--inline">
+          <!-- Fila 1 (imagen | texto) -->
+          <div class="feature-row">
+            <div class="feature-media">
+              <img class="feature-img" src="assets/images/ODS10.png"
+                   alt="ODS 10: Reducción de las desigualdades" loading="lazy">
+            </div>
+            <div class="feature-content">
+              <!-- Reemplazo del atributo color por variable CSS -->
+              <h3 class="feature-title" style="--accent:#DD1367">
+                Acceso igualitario a información crítica cuando más se necesita.
+              </h3>
+            </div>
+          </div>
+
+          <!-- Fila 2 (intercalada: texto | imagen) -->
+          <div class="feature-row">
+            <div class="feature-media">
+              <img class="feature-img" src="assets/images/ODS17.jpg"
+                   alt="ODS 17: Alianzas para lograr los objetivos" loading="lazy">
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title" style="--accent:#001B8B">
+                Articulación efectiva entre municipio, comunidad y organizaciones para resiliencia local en condiciones adversas.
+              </h3>
+            </div>
+          </div>
         </div>
-        <p class="note">
-          Co-diseñado con equipos municipales para asegurar pertinencia operativa y adopción real.
-        </p>
       </div>
     </section>
 
-    <section class="section alt">
+    <!-- CÓMO FUNCIONA -->
+    <section id="como-funciona" class="section alt">
       <div class="container">
-        <h2 class="ds-heading">Casos de uso</h2>
+        <h2 class="ds-heading">¿Cómo funciona?</h2>
+
+        <div class="steps-grid">
+          <article class="step">
+            <span class="step-num">1</span>
+            <h3 class="step-title">Activa tus centros</h3>
+            <p>Configura centros de acopio y albergues y define responsables.</p>
+          </article>
+
+          <article class="step">
+            <span class="step-num">2</span>
+            <h3 class="step-title">Registra personas e inventario</h3>
+            <p>Inscribe familias, registra necesidades y controla el stock.</p>
+          </article>
+
+          <article class="step">
+            <span class="step-num">3</span>
+            <h3 class="step-title">Sincroniza cuando vuelvas online</h3>
+            <p>La información se mantiene y se sincroniza de forma segura.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="section">
+      <div class="container">
+        <h2 class="ds-heading">Pensado para</h2>
         <ul class="chips">
           <li class="chip">Municipalidades (DIDECO)</li>
-          <li class="chip">ONG y fundaciones</li>
+          <li class="chip">ONGs</li>
           <li class="chip">Universidades</li>
           <li class="chip">Juntas de vecinos</li>
-          <li class="chip">Voluntariado</li>
+          <li class="chip">Voluntarios</li>
         </ul>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="section">
-      <div class="container narrow">
+      <div class="container">
         <h2 class="ds-heading">Preguntas frecuentes</h2>
+
         <details>
           <summary>¿Funciona sin internet?</summary>
           <p>Sí. Puedes operar en terreno y los cambios se sincronizan cuando vuelve la conexión.</p>
         </details>
+
         <details>
           <summary>¿Necesito capacitación?</summary>
           <p>No. El flujo es simple y puedes comenzar en minutos con una breve inducción.</p>
         </details>
+
         <details>
           <summary>¿Puedo ver un demo?</summary>
           <p>Sí, escríbenos y coordinamos una demostración guiada.</p>
         </details>
       </div>
     </section>
+
   </main>
 
   <div data-include="partials/footer.html"></div>

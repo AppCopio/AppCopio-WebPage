@@ -1,0 +1,34 @@
+<section class="ig-section container">
+  <h2 class="social-hub__title">Lo último en Instagram</h2>
+  <div id="ig-grid" class="ig-grid"
+       data-posts='[
+         "https://www.instagram.com/p/DOOm5ukgQhs/?igsh=bmQyendnb2d6b3gz",
+         "https://www.instagram.com/p/DOOm5ukgQhs/",
+         "https://www.instagram.com/p/DOOm5ukgQhs/"
+       ]'>
+       <iframe src="https://widget.tagembed.com/300126?website=1" style="width:100%;height:100%;overflow:auto;border:none;"></iframe>
+  </div>
+
+  
+  <!-- Script oficial de Instagram -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <script>
+    (function(){
+      const grid = document.getElementById('ig-grid');
+      const urls = JSON.parse(grid.dataset.posts || "[]");
+      grid.innerHTML = urls.map(u => `
+        <div class="ig-item">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="${u}"
+            data-instgrm-version="14"
+            style="background:#fff; border:0; margin:0; padding:0; width:100%; min-height: 420px;">
+          </blockquote>
+        </div>
+      `).join('');
+      // Procesa los embeds
+      function process(){ if (window.instgrm?.Embeds?.process) window.instgrm.Embeds.process(); }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', process); else process();
+    })();
+  </script>
+</section>
