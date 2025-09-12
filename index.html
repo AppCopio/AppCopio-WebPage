@@ -118,12 +118,11 @@
     <!-- YouTube -->
     <article class="media-card">
       <div class="ratio-16x9">
-        <!-- Reemplaza VIDEO_ID -->
-        <iframe 
+      <iframe 
         width="560" 
         height="315" 
-        src="https://www.youtube.com/embed/Lun_OMdNi4Q?si=De4WGL9Hmf3kWmKM" 
-        title="YouTube video"
+        src="https://www.youtube.com/embed/WVmko7udZsY?si=2zRNW-eaNUgWTn77" 
+        title="AppCopio - Video comercial" 
         loading="lazy" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -137,7 +136,8 @@
     </article>
 
     <!-- Instagram feed -->
-    <div data-include="partials/instaFeed.html" id="footer-slot"></div>
+    <iframe onload="iFrameSetup(this)" src="https://app.mirror-app.com/feed-instagram/5d816972-f911-4727-b704-deab48988189/preview" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
+    <script src="https://cdn.jsdelivr.net/npm/@mirrorapp/iframe-bridge@latest/dist/index.umd.js"></script>
   </div>
 
   <!-- redes sociales -->
