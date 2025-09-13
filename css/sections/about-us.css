@@ -23,3 +23,13 @@
 @media (max-width:480px){
   .about{ padding:60px 0; }
 }
+
+/* Ajuste de espaciado para la sección sobre nosotros */
+.about-text h2 {
+    margin-top: 1.5rem;  /* Aumenta el espacio arriba de cada título */
+    margin-bottom: 1rem; /* Aumenta el espacio debajo de cada título */
+}
+
+.about-text p {
+    margin-bottom: 1.5rem; /* Aumenta el espacio debajo de cada párrafo */
+}

@@ -72,3 +72,15 @@
 .footer-social__link.is-linkedin { background: #0A66C2; }
 .footer-social__link.is-youtube  { background: #FF0033; }
 
+.footer-logo-feria {
+  max-width: 150px;
+  height: auto;
+  margin-top: 10px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo-feria:hover {
+  opacity: 1;
+}
