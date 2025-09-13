@@ -35,6 +35,268 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* ===== Problem card ===== */
+.problem-card{     
+  max-width: 1200px;
+  margin-inline: auto;
+  background: #f6fbfa;
+  border: 2px dashed #00888333;
+  border-radius: var(--radius-2xl, 22px);
+  padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+}
+
+/* Card para "Nuestra solución" (consistente con .problem-card pero sólida) */
+.solution-card{
+  max-width: 1200px;
+  margin-inline: auto;
+  background: #ffffff;
+  border: 1px solid #e6f2ef;
+  border-radius: var(--radius-2xl, 22px);
+  padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+  box-shadow: var(--shadow-1, 0 12px 32px rgba(0,0,0,.06));
+}
+
+/* Tarjetas pareadas en Sobre AppCopio*/
+.ps-card{
+  border-radius: var(--radius-2xl, 22px);
+  padding: var(--space-5, 1.25rem) var(--space-6, 1.5rem);
+  background: #fff;
+  box-shadow: var(--shadow-1, 0 12px 32px rgba(0,0,0,.06));
+  border: 1px solid #e6f2ef;
+  display: flex; flex-direction: column; gap: .5rem;
+}
+.ps-card.is-problem{
+  background: #f6fbfa;
+  border: 2px dashed #00888333;
+  box-shadow: none;
+}
+.ps-head .ps-kicker{
+  display:inline-block; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  font-size:.8rem; opacity:.7; margin-bottom:.25rem;
+}
+.ps-list{ margin:.25rem 0 0 1.1rem; }
+.ps-list li{ margin:.25rem 0; }
+
+
+.ps-card{ position: relative; }
+.ps-card::before{
+  content:"";
+  position:absolute; left:-1px; top:0; bottom:0; width:6px;
+  border-radius: var(--radius-2xl) 0 0 var(--radius-2xl);
+  background: transparent;
+}
+.ps-card.is-solution::before{ background: var(--sol); }
+.ps-card.is-problem::before{  background: var(--prob); }
+
+/* en hover solo elevamos un poquito */
+.ps-card:hover{ box-shadow: 0 14px 36px rgba(0,0,0,.10); transform: translateY(-2px); }
+
+
+/* contenedor del par */
+.ps-paired{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: var(--space-6, 1.5rem);
+  isolation: isolate; /* para controlar capas */
+}
+
+/* banda bajo las cards */
+.ps-paired::before{
+  content:"";
+  position:absolute; inset:auto  -2rem; /* respira a los lados */
+  height: clamp(200px, 35vw, 300px);
+  top: 50%; transform: translateY(-50%);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(0, 136, 131, 0.137), rgba(255, 255, 255, 0.04));
+  z-index: -1;
+}
+
+/* asegura que las cards queden sobre la banda */
+.ps-paired .ps-card{ position: relative; z-index: 1; }
+
+
+/* Tarjetas MVV en Sobre nosotros*/
+:root{
+  --mvv-gap-x: 1.5rem;               /* separación horizontal entre cards */
+  --mvv-row-gap: 2.75rem;            /* separación entre fila 1 y fila 2 */
+  --mvv-band-extra: 220px;           /* ancho extra de la franja respecto al contenido */
+  --mvv-band-height: clamp(320px, 42vw, 460px); /* franja más alta, cruza ambas filas */
+  --mvv-accent: #008883;
+  --mvv-radius: 22px;
+  --content-max: 1200px;     /* ancho del contenido */
+  --band-extra: 160px;       /* cuánto sobresale la franja vs contenido */
+  --ps-row-gap: 2.75rem;
+  --ps-band-height: clamp(320px, 42vw, 460px);
+}
+
+/* Grid 2 columnas + franja centrada en todo el bloque */
+
+
+.mvv-grid{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: var(--space-6, 1.5rem);
+  isolation: isolate;
+}
+
+/* Franja más alta y más ancha que el contenido; centrada vertical/horizontal */
+.mvv-grid::before{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  transform: translate(-50%, -50%);
+  width: min(calc(--content-max + var(--mvv-band-extra)), calc(100vw - 2rem));
+  height: var(--mvv-band-height);
+  border-radius: var(--mvv-radius);
+  background: linear-gradient(180deg, rgba(0,136,131,.10), rgba(0,136,131,.05));
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Cards nuevas */
+.mvv-card{
+  position: relative;
+  z-index: 1; /* por encima de la franja */
+  background: #fff;
+  border: 1px solid #e6f2ef;
+  border-radius: var(--mvv-radius);
+  box-shadow: 0 12px 32px rgba(0,0,0,.06);
+  padding: 1.25rem 1.5rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* La tercera card ocupa toda la fila (las 2 columnas) */
+.mvv-span-2{ grid-column: 1 / -1; }
+
+/* Hover opcional */
+.mvv-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.10);
+}
+
+
+/* ===== Ancho global para ps-* y mvv-* ===== */
+
+/* Grids centrados y limitados a 1200px */
+.ps-paired,
+.mvv-grid{
+  max-width: var(--content-max);
+  width: min(100%, var(--content-max));
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Gaps consistentes */
+.ps-paired{ column-gap: var(--space-6,1.5rem); row-gap: var(--ps-row-gap); }
+.mvv-grid{ column-gap: var(--mvv-gap-x,1.5rem); row-gap: var(--mvv-row-gap,2.75rem); }
+
+/* Franjas: más anchas que el contenido y centradas */
+.ps-paired::before,
+.mvv-grid::before{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  transform: translate(-50%, -50%);
+  width: min(calc(100% + var(--band-extra)), calc(100vw - 2rem));
+  height: var(--ps-band-height);
+  border-radius: var(--radius-2xl,22px);
+  background: linear-gradient(180deg, rgba(0,136,131,.10), rgba(0,136,131,.05));
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Asegura que las cards queden sobre la franja y llenen su columna */
+.ps-paired .ps-card,
+.mvv-grid .mvv-card{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Utilidad: hacer que una card ocupe la fila completa en cualquier grid ps/mv */
+.ps-span-2, .mvv-span-2{ grid-column: 1 / -1; }
+
+/* Responsive: apilar columnas y ajustar franja */
+@media (max-width: 900px){
+  .ps-paired, .mvv-grid{ grid-template-columns: 1fr; }
+  .ps-paired::before, .mvv-grid::before{
+    height: clamp(380px, 70vw, 560px);
+    width: min(calc(100% + var(--band-extra)), calc(100vw - 2rem));
+  }
+}
+
+
+/* Responsive: apila y ajusta franja */
+@media (max-width: 900px){
+  .mvv-grid{ grid-template-columns: 1fr; }
+  .mvv-grid::before{
+    width: min(calc(100% + var(--mvv-band-extra)), calc(100vw - 2rem));
+    height: clamp(380px, 70vw, 560px); /* un poco más alta en móvil */
+  }
+}
+
+
+/* Responsive: en móvil apila Misión/Visión */
+@media (max-width: 900px){
+  .ps-paired{ grid-template-columns: 1fr; }
+  .ps-paired::before{
+    width: min(calc(100% + var(--band-extra)), calc(100vw - 2rem));
+    height: clamp(220px, 55vw, 300px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Micro-logos de partners */
+.partners-inline{
+  margin-top: .75rem;
+  display:flex; align-items:center; gap:.5rem; flex-wrap:wrap;
+  background:#f4fbfa; border:1px solid #e6f2ef; border-radius:12px; padding:.5rem .75rem;
+}
+.partners-inline img{ height:50px; width:auto; display:block;}
+.partners-inline span{ font-weight:600; margin-right:.25rem; }
+
+
+
+
+
+.about-cards{
+  display: grid;
+  grid-template-columns: 1fr;              /* móvil */
+  gap: var(--space-4, 1rem);
+  align-items: stretch;
+}
+
+@media (min-width: 900px){
+  .about-cards{
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas */
+    column-gap: var(--space-6, 2rem);
+    row-gap: var(--space-5, 1.25rem);
+  }
+}
+
+/* Opcional: que el contenido de la card “llene” la altura */
+.about-cards .card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.about-cards .card p{ margin-top: .5rem; }
+
+
+
+
 
 
 @media (max-width: 900px){ .cards-grid { grid-template-columns: 1fr 1fr; } }

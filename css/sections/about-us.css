@@ -1,35 +1,37 @@
 .about{ padding:80px 0; background:#f8f9fa; }
 
 .section-header{ text-align:center; margin-bottom:60px; }
-.section-title{ font-size:2.5rem; color:#333; margin-bottom:15px; }
+.section-title{ font-size:2.5rem; color:#333; margin-bottom:5px; }
 .section-subtitle{ font-size:1.2rem; color:#666; max-width:600px; margin:0 auto; }
 
 .about-content{
   display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;
 }
 
-
 .features-list{ list-style:none; margin-top:20px; }
 .features-list li{ padding:8px 0; display:flex; align-items:center; gap:10px; }
 .features-list i{ color:#28a781; font-size:1.1rem; }
 
-.about-cards{ display:grid; gap:30px; }
+.about-cards{ display:grid; gap:25px; }
 
 /* Responsive */
 @media (max-width:768px){
   .about-content{ grid-template-columns:1fr; gap:30px; }
   .section-title{ font-size:2rem; }
 }
+
 @media (max-width:480px){
   .about{ padding:60px 0; }
 }
 
 /* Ajuste de espaciado para la sección sobre nosotros */
 .about-text h2 {
-    margin-top: 1.5rem;  /* Aumenta el espacio arriba de cada título */
-    margin-bottom: 1rem; /* Aumenta el espacio debajo de cada título */
+  margin-top: 1rem;  /* Aumenta el espacio arriba de cada título */
+  margin-bottom: .3rem;
+  text-align: center; /* Aumenta el espacio debajo de cada título */
 }
 
 .about-text p {
-    margin-bottom: 1.5rem; /* Aumenta el espacio debajo de cada párrafo */
+  margin-bottom: 1rem; /* Aumenta el espacio debajo de cada párrafo */
 }
+

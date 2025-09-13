@@ -34,6 +34,10 @@
   <link rel="stylesheet" href="./css/components/cards.css">
   <link rel="stylesheet" href="./css/components/rotador.css">
   <link rel="stylesheet" href="./css/sections/footer.css">
+
+      <!-- Íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./assets/images/favicon.ico">    
 </head>
 
 <body>
@@ -62,64 +66,122 @@
     </section>
 
     <!-- PROBLEMA / SOLUCIÓN (split profesional) -->
-<section class="section">
-  <div class="container ps-grid">
-    <!-- Problema -->
-    <article class="ps-card is-problem">
-      <header class="ps-head">
-        <span class="ps-kicker">Contexto</span>
-        <h2 class="ds-subtitle">El problema</h2>
-      </header>
-      <p class="lead">
-        En momentos críticos, los equipos municipales suelen depender de planillas, formularios y chats
-        que fragmentan la información. Esto ralentiza decisiones, duplica esfuerzos y puede generar una
-        entrega de ayuda desigual entre territorios.
-      </p>
-      <ul class="ps-list">
-        <li>Datos dispersos y sin trazabilidad.</li>
-        <li>Decisiones lentas por falta de visibilidad.</li>
-        <li>Dependencia de conectividad en terreno.</li>
-      </ul>
-    </article>
+    <section class="section">
+      <div class="container ps-paired">
+        <!-- Problema -->
+        <article class="ps-card is-solution">
+          <header class="ps-head">
+            <span class="ps-kicker">Contexto</span>
+            <h2 class="ds-subtitle">El problema</h2>
+          </header>
+          <p class="lead">
+            En momentos críticos como emergencias o catástrofes, los equipos municipales suelen depender de planillas, formularios y chats
+            que fragmentan la información. Esto ralentiza decisiones, duplica esfuerzos y puede generar una
+            entrega de ayuda desigual entre territorios.
+          </p>
+          <ul class="ps-list">
+            <li>Datos dispersos y sin trazabilidad.</li>
+            <li>Decisiones lentas por falta de visibilidad.</li>
+            <li>Dependencia de conectividad en terreno.</li>
+          </ul>
+        </article>
 
-    <!-- Nuestra solución -->
-    <article class="ps-card is-solution">
-      <header class="ps-head">
-        <span class="ps-kicker">Propuesta</span>
-        <h2 class="ds-subtitle">Nuestra solución</h2>
-      </header>
-      <p class="lead">
-        AppCopio junta en un solo lugar lo que hoy está repartido en planillas y chats.
-        Puedes registrar lo que pasa en el centro aun sin señal; cuando vuelve la conexión,
-        todo se sincroniza solo. Así, todos miran la misma información actualizada.
-      </p>
-      <ul class="ps-list">
-        <li>Registra entradas y salidas de insumos, familias y turnos en pocos pasos.</li>
-        <li>La información queda ordenada por centro y fecha para encontrarla rápido.</li>
-        <li>Transparencia: se ve <em>qué</em> se hizo, <em>cuándo</em> y <em>quién</em> lo realizó.</li>
-      </ul>
+        <!-- Nuestra solución -->
+        <article class="ps-card is-solution">
+          <header class="ps-head">
+            <span class="ps-kicker">Propuesta</span>
+            <h2 class="ds-subtitle">Nuestra solución</h2>
+          </header>
+          <p class="lead">
+            AppCopio junta en un solo lugar lo que hoy está repartido en planillas y chats.
+            Puedes registrar lo que pasa en el centro aun sin señal; cuando vuelve la conexión,
+            todo se sincroniza solo. Así, todos miran la misma información actualizada.
+          </p>
+          <ul class="ps-list">
+            <li>Registra entradas y salidas de insumos, familias y turnos en pocos pasos.</li>
+            <li>La información queda ordenada por centro y fecha para encontrarla rápido.</li>
+            <li>Transparencia: se ve <em>qué</em> se hizo, <em>cuándo</em> y <em>quién</em> lo realizó.</li>
+          </ul>
 
-      <!-- (Opcional) micro-logos de colaboración -->
-      <div class="partners-inline" aria-label="Colaboración">
-        <span>En colaboración con Sección de Emergencia I.M.V.</span>
-        <img src="assets/images/dideco.png" alt="Sección de Emergencia DIDECO, Ilustre Municipalidad de Valparaíso" />
+          <!-- (Opcional) micro-logos de colaboración -->
+          <div class="partners-inline" aria-label="Colaboración">
+            <span>En colaboración con Sección de Emergencia I.M.V.</span>
+            <img src="assets/images/dideco.png" alt="Sección de Emergencia DIDECO, Ilustre Municipalidad de Valparaíso" />
+          </div>
+        </article>
       </div>
-    </article>
-  </div>
-</section>
+    </section>
+
+    
+
+    <section class="section">
+      <div class="container">
+        <h2 class="ds-heading">¿Qué ofrecemos?</h2>
+          <div class="about-cards">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4>Para la Comunidad</h4>
+              <p>
+                Facilitamos el acceso a información actualizada sobre centros de
+                acopio disponibles.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h4>Para Administradores</h4>
+              <p>
+                Herramientas completas para gestionar recursos, personal y
+                operaciones diarias.
+              </p>
+            </div>
+          </div>
+            </div>
+    </section>
 
     <!-- BENEFICIOS -->
     <section class="section">
       <div class="container">
-        <h2 class="ds-heading">¿Qué ofrecemos?</h2>
+        <h2 class="ds-heading">Beneficios</h2>
         <div data-include="partials/beneficios.html" id="beneficios"></div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como-funciona" class="section alt">
+      <div class="container">
+        <h2 class="ds-heading">¿Cómo funciona?</h2>
+
+        <div class="steps-grid">
+          <article class="step">
+            <span class="step-num">1</span>
+            <h3 class="step-title">Activa tus centros</h3>
+            <p>Configura centros de acopio y albergues y define responsables.</p>
+          </article>
+
+          <article class="step">
+            <span class="step-num">2</span>
+            <h3 class="step-title">Registra personas e inventario</h3>
+            <p>Inscribe familias, registra necesidades y controla el stock.</p>
+          </article>
+
+          <article class="step">
+            <span class="step-num">3</span>
+            <h3 class="step-title">Sincroniza cuando vuelvas online</h3>
+            <p>La información se mantiene y se sincroniza de forma segura.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- ODS -->
     <section class="section">
       <div class="container">
-        <h2 class="ds-heading">Apoyo y relación con los ODS</h2>
+        <h2 class="ds-heading">Comprometidos con los ODS</h2>
         <p>
           AppCopio contribuye a una respuesta más justa y coordinada, alineada con los Objetivos de Desarrollo Sostenible:
         </p>
@@ -155,34 +217,9 @@
       </div>
     </section>
 
-    <!-- CÓMO FUNCIONA -->
-    <section id="como-funciona" class="section alt">
-      <div class="container">
-        <h2 class="ds-heading">¿Cómo funciona?</h2>
 
-        <div class="steps-grid">
-          <article class="step">
-            <span class="step-num">1</span>
-            <h3 class="step-title">Activa tus centros</h3>
-            <p>Configura centros de acopio y albergues y define responsables.</p>
-          </article>
 
-          <article class="step">
-            <span class="step-num">2</span>
-            <h3 class="step-title">Registra personas e inventario</h3>
-            <p>Inscribe familias, registra necesidades y controla el stock.</p>
-          </article>
-
-          <article class="step">
-            <span class="step-num">3</span>
-            <h3 class="step-title">Sincroniza cuando vuelvas online</h3>
-            <p>La información se mantiene y se sincroniza de forma segura.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PARA QUIÉN -->
+    <!-- PARA QUIÉN 
     <section class="section">
       <div class="container">
         <h2 class="ds-heading">Pensado para</h2>
@@ -194,9 +231,9 @@
           <li class="chip">Voluntarios</li>
         </ul>
       </div>
-    </section>
+    </section>-->
 
-    <!-- FAQ -->
+    <!-- FAQ 
     <section class="section">
       <div class="container">
         <h2 class="ds-heading">Preguntas frecuentes</h2>
@@ -216,7 +253,7 @@
           <p>Sí, escríbenos y coordinamos una demostración guiada.</p>
         </details>
       </div>
-    </section>
+    </section>-->
 
   </main>
 

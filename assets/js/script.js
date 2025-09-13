@@ -291,7 +291,7 @@ document.addEventListener("navbar:loaded", () => {
 });
 
 
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   const el = document.getElementById('hero-title');
   if (!el) return;
   const slogans = [

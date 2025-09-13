@@ -52,12 +52,57 @@
   font-size: 1.1rem;
 }
 
-/* Card estática */
+/* Card estática 
 .static-card{
   width:100%; height:100%; border-radius:8px; overflow:hidden; position:relative;
   box-shadow:0 4px 10px rgba(0,0,0,.15); display:flex; flex-direction:column; justify-content:flex-end;
 }
 .static-card img{ width:100%; height:100%; object-fit:cover; flex:1; }
-.card-caption{ background:rgba(0,0,0,.5); color:#fff; padding:8px 12px; text-align:center; }
+.card-caption{ background: var(--color-primary-soft); color:#fff; padding:8px 12px; text-align:center; }
 
 .team-group-photo{ max-width:8000px; aspect-ratio:16/9; justify-self:center; }
+*/
+
+
+/* tu estilo existente */
+.card-caption{
+  background: rgba(0,0,0,.5);
+  color:#fff;
+  padding:8px 12px;
+  text-align:center;
+}
+
+/* posiciona y oculta el caption por defecto */
+.static-card{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius:var(--radius-md);         /* para que el caption no se salga */
+}
+
+.about-image{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.card-caption{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;                   /* pegado al borde inferior de la foto */
+  opacity: 0;                  /* oculto por defecto */
+  transform: translateY(8px);  /* pequeño desplazamiento para animar */
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+/* mostrar al pasar el mouse por la tarjeta/foto */
+.static-card:hover .card-caption{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* opcional: oscurece un poco la imagen al hover */
+.static-card:hover .about-image{
+  filter: brightness(.9);
+}
